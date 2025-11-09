@@ -1,3 +1,5 @@
+
+      
 services:
   - type: web
     name: rizzosai-backend
@@ -9,15 +11,14 @@ services:
     envVars:
       - key: OPENAI_API_KEY
         sync: false
-    domains:
-      - rizzosai.com
-      - www.rizzosai.com
-  - type: static
+    # Remove domains from backend if you want them only on the frontend
+
+  - type: web
     name: rizzosai-landing
+    env: static
     rootDir: backend/rizzs
     buildCommand: ''
     staticPublishPath: backend/rizzs
     domains:
       - rizzosai.com
       - www.rizzosai.com
-      
